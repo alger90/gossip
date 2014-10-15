@@ -1,0 +1,17 @@
+Configure Your System:
+1. open 2 windows;
+2. in the first window, enter "erl -name node_1@127.0.0.1";
+3. in the second window, enter "erl -name node_2@127.0.0.1";
+4. in any one of the windows, enter "gossip_application:init(YOUR_UNIQUE_CONFIG_FILE)";
+5. in both of the windows, enter "gossip_node:run(YOUR_NODE_CONFIG_FILE_FOR_THIS_NODE)";
+
+test:
+1. in any of thw windows, enter "userverProcName ! testLongestWord";
+2. in any of thw windows, enter "userverProcName ! testMostFreqWord";
+3. in any of thw windows, enter "userverProcName ! testWhichNodes";
+
+notes:
+1. You must first make sure you configure file is correct;
+2. YOUR_UNIQUE_CONFIG_FILE is the only config file for init process;
+3. YOUR_NODE_CONFIG_FILE_FOR_THIS_NODE is differernt for each nodes, in the case you have 2 nodes, you have 2 differnt these fils.
+4. For now, testWhichNodes" will not work since don't implement how to accept word list from user input yet.
